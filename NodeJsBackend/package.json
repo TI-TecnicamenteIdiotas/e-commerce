@@ -1,0 +1,27 @@
+{
+  "name": "nodejsbackend",
+  "version": "0.0.1",
+  "description": "Almir Junior's first nodeJS api",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc; node dist/"
+  },
+  "keywords": [
+    "Almir",
+    "Junior"
+  ],
+  "author": "Almir Junior",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "typescript": "^4.4.4"
+  }
+}
