@@ -18,5 +18,7 @@ module.exports = {
 		indent: ['error', 'tab'],
 		'no-tabs': 'off',
 		'no-console': 'off',
+		'import/no-unresolved': 'off',
+		'import/extensions': 'off',
 	},
 };
