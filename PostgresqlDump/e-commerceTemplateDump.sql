@@ -92,6 +92,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.usuarios (
     id bigint NOT NULL,
+    nome character varying(100) NOT NULL,
     email character varying(100) NOT NULL,
     senha character varying(100) NOT NULL
 );
@@ -131,8 +132,10 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usu
 -- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.usuarios (id, email, senha) FROM stdin;
-1	almirafjr@gmail.com	12345
+COPY public.usuarios (id, email, senha, nome) FROM stdin;
+1	almirafjr@gmail.com	12345	Almir
+2	heltonreis@gmail.com	12345	Helton
+3	lucianoaugusto@gmail.com	12345	Luciano
 \.
 
 
@@ -140,7 +143,7 @@ COPY public.usuarios (id, email, senha) FROM stdin;
 -- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.usuarios_id_seq', 1, true);
+SELECT pg_catalog.setval('public.usuarios_id_seq', 3, true);
 
 
 --
