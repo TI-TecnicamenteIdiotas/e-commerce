@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="input">
+
+    <form [formGroup]="registerUserForm" (ngSubmit)="registerUser()">
+      <div class="inputField" >
+        <label for="name">*Nome:</label>
+        <input type="text" placeholder="Insira seu nome" formControlName="userName"/>
+      </div>
+
+      <div class="inputField" >
+        <label for="email">*Email:</label>
+        <input type="text" placeholder="Insira seu email" formControlName="userEmail"/>
+      </div>
+
+      <div class="inputField" >
+        <label for="password">*Senha:</label>
+        <input type="text" placeholder="Insira sua senha" formControlName="userPassword"/>
+      </div>
+
+      <div class="button">
+        <button>Cadastrar</button>
+      </div>
+    </form>
+
+  </div>
+</div>

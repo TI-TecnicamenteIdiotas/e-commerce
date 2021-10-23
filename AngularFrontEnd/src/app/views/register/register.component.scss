@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 90vh;
+
+  .input {
+    display: flex;
+    flex-direction: column;
+
+    width: 10%;
+
+    .inputField {
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .button {
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-top: 1rem;
+  }
+}
