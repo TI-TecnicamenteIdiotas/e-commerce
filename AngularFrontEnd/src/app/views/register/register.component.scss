@@ -1,31 +1,109 @@
 .container {
+  // border: 1px solid red;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  height: 90vh;
+  height: 100vh;
 
-  .input {
+  font-weight: 600;
+
+  .container-input {
+    // border: 1px solid red;
+
     display: flex;
     flex-direction: column;
 
-    width: 10%;
+    .container-inputField {
+      display: flex;
+      flex-direction: column;
 
-    .inputField {
       margin: 0 0 1rem 0;
+
+      .inputField {
+        border: none;
+        border-radius: 0 1rem 1rem 1rem;
+
+        padding: 0.5rem;
+
+        box-shadow: 0.25rem 0.25rem 0.5rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 
-  .button {
-    width: auto;
+  .container-button {
+    // border: 1px solid red;
+    border: none;
 
     display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
     margin-top: 1rem;
+
+    .cancelButton {
+      border: none;
+      border-radius: 5rem;
+
+      padding: 0.5rem;
+
+      box-shadow: 0.25rem 0.25rem 0.5rem;
+
+      background: lightgrey;
+
+      color: black;
+
+      font-weight: 600;
+
+      background-color: rgba(128, 0, 0, 0.5);
+
+      &:hover {
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+
+      .cancelButtonLink {
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
+        &:visited {
+          color: black;
+        }
+        &:active {
+          color: black;
+        }
+      }
+    }
+
+    .submitButton {
+      border: none;
+      border-radius: 5rem;
+
+      padding: 0.5rem;
+
+      box-shadow: 0.25rem 0.25rem 0.5rem;
+
+      font-weight: 600;
+
+      background-color: rgba(0, 128, 0, 0.5);
+
+      &:hover:enabled {
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+
+      &[disabled] {
+        background-color: rgba(210, 210, 210, 0.5);
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+    }
+
   }
 }

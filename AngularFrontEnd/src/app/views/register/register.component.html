@@ -1,24 +1,70 @@
 <div class="container">
-  <div class="input">
+  <div class="container-input">
 
-    <form [formGroup]="registerUserForm" (ngSubmit)="registerUser()">
-      <div class="inputField" >
-        <label for="name">*Nome:</label>
-        <input type="text" placeholder="Insira seu nome" formControlName="userName"/>
+    <form [formGroup]="registerUserForm">
+      <div class="container-inputField" >
+        <label for="name">Nome</label>
+        <input
+        class="inputField"
+        type="text"
+        placeholder="Insira seu nome"
+        maxlength="75"
+        formControlName="userName"
+        [ngbTooltip]="(registerUserForm.controls.userName.invalid && !registerUserForm.controls.userName.pristine) ? 'Este campo é obrigatório' : ''"
+        [autoClose]="true"
+        triggers="manual"
+        #t1="ngbTooltip"
+        (focus)="t1.open()"
+        placement="top-right"/>
+
       </div>
 
-      <div class="inputField" >
-        <label for="email">*Email:</label>
-        <input type="text" placeholder="Insira seu email" formControlName="userEmail"/>
+      <div class="container-inputField" >
+        <label for="email">Email</label>
+        <input
+        class="inputField"
+        type="email"
+        placeholder="Insira seu email"
+        maxlength="75"
+        formControlName="userEmail"
+        [ngbTooltip]="(registerUserForm.controls.userEmail.invalid && !registerUserForm.controls.userEmail.pristine) ? 'Este campo é obrigatório' : ''"
+        [autoClose]="true"
+        triggers="manual"
+        #t2="ngbTooltip"
+        (focus)="t2.open()"
+        placement="top-right"/>
+
       </div>
 
-      <div class="inputField" >
-        <label for="password">*Senha:</label>
-        <input type="text" placeholder="Insira sua senha" formControlName="userPassword"/>
+      <div class="container-inputField" >
+        <label for="password">Senha</label>
+        <input
+        class="inputField"
+        type="password"
+        placeholder="Insira sua senha"
+        maxlength="50"
+        formControlName="userPassword"
+        [ngbTooltip]="(registerUserForm.controls.userPassword.invalid && !registerUserForm.controls.userPassword.pristine) ? 'Este campo é obrigatório' : ''"
+        [autoClose]="true"
+        triggers="manual"
+        #t3="ngbTooltip"
+        (focus)="t3.open()"
+        placement="top-right"/>
+
       </div>
 
-      <div class="button">
-        <button>Cadastrar</button>
+      <div class="container-button">
+        <button class="cancelButton">
+          <a class="cancelButtonLink" href="/home">
+            Cancelar
+          </a>
+        </button>
+
+        <button class="submitButton"
+        [disabled]="!(registerUserForm.controls.userName.valid && registerUserForm.controls.userEmail.valid && registerUserForm.controls.userPassword.valid)"
+        (click)="registerUser()">
+          Registrar
+        </button>
       </div>
     </form>
 

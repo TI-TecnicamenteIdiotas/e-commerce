@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiAdminService } from '../../services/api-admin.service';
 import { ApiUserService } from '../../services/api-user.service';
-import { FormGroup, FormControl, FormControlName } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -13,22 +13,37 @@ export class RegisterComponent {
   adminService: ApiAdminService;
   userService: ApiUserService;
 
-  registerUserForm = new FormGroup({
-    userName: new FormControl(''),
-    userEmail: new FormControl(''),
-    userPassword: new FormControl('')
-  });
+  registerUserForm: FormGroup;
 
-  constructor(apiAdminService: ApiAdminService, apiUserService: ApiUserService) {
+  constructor(apiAdminService: ApiAdminService, apiUserService: ApiUserService, private formBuilder: FormBuilder) {
     this.adminService = apiAdminService;
     this.userService = apiUserService;
+
+    this.registerUserForm = this.formBuilder.group({
+      userName: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(75)
+      ])],
+      userEmail: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(75),
+        Validators.email
+      ])],
+      userPassword: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(50)
+      ])]
+    });
   }
 
   registerUser() {
     this.userService.setNewUser(
-      this.registerUserForm.value.userName,
-      this.registerUserForm.value.userEmail,
-      this.registerUserForm.value.userPassword
+        this.registerUserForm.value.userName,
+        this.registerUserForm.value.userEmail,
+        this.registerUserForm.value.userPassword
       );
   }
 }
