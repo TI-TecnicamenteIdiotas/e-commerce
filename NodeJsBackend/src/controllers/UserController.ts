@@ -7,6 +7,7 @@ const router = Router();
 router.post('/register', async (request, response) => {
 	if (!request.body.name || !request.body.email || !request.body.password) {
 		response.sendStatus(400);
+		return;
 	}
 
 	const databaseResult = (await client.query('SELECT email FROM usuarios WHERE email = $1;',
@@ -25,6 +26,7 @@ router.post('/register', async (request, response) => {
 router.post('/login', async (request, response) => {
 	if (!request.body.email || !request.body.password) {
 		response.sendStatus(400);
+		return;
 	}
 
 	const databaseResult = (await client.query('SELECT senha, nome FROM usuarios WHERE email = $1;',
@@ -32,6 +34,7 @@ router.post('/login', async (request, response) => {
 
 	if (databaseResult.rowCount === 0) {
 		response.sendStatus(404);
+		return;
 	}
 
 	const loginResult = databaseResult.rows[0].senha === request.body.password;
