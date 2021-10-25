@@ -16,6 +16,17 @@
     display: flex;
     flex-direction: column;
 
+    form {
+      div {
+        label {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+      }
+    }
+
     .container-inputField {
       display: flex;
       flex-direction: column;
@@ -48,7 +59,16 @@
 
     margin-top: 1rem;
 
+    a {
+      text-decoration: none;
+    }
+
     .cancelButton {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
       border: none;
       border-radius: 5rem;
 
@@ -57,12 +77,11 @@
       box-shadow: 0.25rem 0.25rem 0.5rem;
 
       background: lightgrey;
+      background-color: rgba(128, 0, 0, 0.5);
 
       color: black;
 
       font-weight: 600;
-
-      background-color: rgba(128, 0, 0, 0.5);
 
       &:hover {
         box-shadow: 0.25rem 0.25rem 0.5rem inset;
@@ -84,6 +103,11 @@
     }
 
     .submitButton {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
       border: none;
       border-radius: 5rem;
 

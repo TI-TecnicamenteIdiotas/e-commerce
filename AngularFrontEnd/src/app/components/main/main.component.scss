@@ -1,0 +1,14 @@
+main {
+  --headerVH: 10vh;
+  --mainVH: 80vh;
+  --footerVH: 10vh;
+
+  background: rgba(0, 255, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--mainVH);
+
+  justify-content: center;
+  align-items: center;
+}

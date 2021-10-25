@@ -1,5 +1,15 @@
-<div class="container">
-  <h1>
-    Bem vindo a loja
-  </h1>
+<swal #loginNotification
+title="Atenção"
+text="Você precisa estar logado para acessar os produtos do site"
+icon="warning"
+[showCancelButton]="true"
+[focusCancel]="true"
+(confirm)="userAcceptedLoginModal()"
+(dismiss)="userDeniedLoginModal()">
+</swal>
+
+<div class="container" [swal]="loginNotification">
+  <app-header></app-header>
+  <app-main></app-main>
+  <app-footer></app-footer>
 </div>

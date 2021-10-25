@@ -1,7 +1,9 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  --headerVH: 10vh;
+  --mainVH: 80vh;
+  --footerVH: 10vh;
 
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--headerVH) var(--mainVH) var(--footerVH);
 }

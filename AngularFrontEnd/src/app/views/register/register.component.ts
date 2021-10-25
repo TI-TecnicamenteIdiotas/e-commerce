@@ -46,4 +46,8 @@ export class RegisterComponent {
         this.registerUserForm.value.userPassword
       );
   }
+
+  navigateToHome() {
+    location.href = "/home";
+  }
 }

@@ -1,0 +1,52 @@
+header {
+  --headerVH: 10vh;
+  --mainVH: 80vh;
+  --footerVH: 10vh;
+
+  background: rgba(255, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: calc(var(--headerVH)/2) calc(var(--headerVH)/2);
+
+  justify-content: center;
+  align-items: center;
+
+  .headerlogo {
+    justify-self: center;
+    align-self: center;
+
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+  .headerbuttons {
+    justify-self: center;
+    align-self: center;
+
+    a {
+      button {
+        outline: none;
+        border: none;
+        background: none;
+
+        padding: 0;
+        margin: 0.25rem;
+
+        div {
+          outline: 1px solid black;
+          border-radius: 0.25rem;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          mat-icon {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

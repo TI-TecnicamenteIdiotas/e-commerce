@@ -3,7 +3,7 @@
 
     <form [formGroup]="registerUserForm">
       <div class="container-inputField" >
-        <label for="name">Nome</label>
+        <label for="name"><mat-icon>person</mat-icon>Nome</label>
         <input
         class="inputField"
         type="text"
@@ -20,7 +20,7 @@
       </div>
 
       <div class="container-inputField" >
-        <label for="email">Email</label>
+        <label for="email"><mat-icon>alternate_email</mat-icon>Email</label>
         <input
         class="inputField"
         type="email"
@@ -37,7 +37,7 @@
       </div>
 
       <div class="container-inputField" >
-        <label for="password">Senha</label>
+        <label for="password"><mat-icon>lock</mat-icon>Senha</label>
         <input
         class="inputField"
         type="password"
@@ -54,16 +54,20 @@
       </div>
 
       <div class="container-button">
-        <button class="cancelButton">
-          <a class="cancelButtonLink" href="/home">
+        <a routerLink="/home">
+          <button class="cancelButton">
+            <mat-icon>close</mat-icon>
             Cancelar
-          </a>
-        </button>
+          </button>
+        </a>
 
         <button class="submitButton"
         [disabled]="!(registerUserForm.controls.userName.valid && registerUserForm.controls.userEmail.valid && registerUserForm.controls.userPassword.valid)"
-        (click)="registerUser()">
+        (click)="registerUser()"
+        [swal]="['Pronto!', 'Novo usuário criado com sucesso', 'success']"
+        (confirm)="navigateToHome()">
           Registrar
+          <mat-icon>check</mat-icon>
         </button>
       </div>
     </form>
