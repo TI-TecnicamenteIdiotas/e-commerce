@@ -12,4 +12,27 @@ router.post('/register', async (request, response) => {
 		[request.body.name, request.body.email, request.body.password])).rows);
 });
 
+//	Login a new user login with password in database
+router.post('/login', async (request, response) => {
+	if (!request.body.email || !request.body.password) {
+		response.sendStatus(400);
+	}
+
+	const databaseResult = (await client.query('SELECT senha FROM usuarios WHERE email = $1;',
+	[request.body.email]));
+
+	if (databaseResult.rowCount === 0) {
+		response.sendStatus(404);
+	}
+
+	const loginResult = databaseResult.rows[0] === request.body.password;
+
+	if (loginResult) {
+		response.json(true);
+	}
+	else {
+		response.sendStatus(401);
+	}
+});
+
 export default router;
