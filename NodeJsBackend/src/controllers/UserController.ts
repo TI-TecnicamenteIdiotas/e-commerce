@@ -8,8 +8,17 @@ router.post('/register', async (request, response) => {
 	if (!request.body.name || !request.body.email || !request.body.password) {
 		response.sendStatus(400);
 	}
-	response.json((await client.query('INSERT INTO usuarios(nome, email, senha) VALUES ($1, $2, $3);',
+
+	const databaseResult = (await client.query('SELECT email FROM usuarios WHERE email = $1;',
+	[request.body.email]));
+
+	if (databaseResult.rowCount !== 0) {
+		response.sendStatus(400);
+	}
+	else {
+		response.json((await client.query('INSERT INTO usuarios(nome, email, senha) VALUES ($1, $2, $3);',
 		[request.body.name, request.body.email, request.body.password])).rows);
+	}
 });
 
 //	Login a new user login with password in database
