@@ -18,17 +18,17 @@ router.post('/login', async (request, response) => {
 		response.sendStatus(400);
 	}
 
-	const databaseResult = (await client.query('SELECT senha FROM usuarios WHERE email = $1;',
+	const databaseResult = (await client.query('SELECT senha, nome FROM usuarios WHERE email = $1;',
 	[request.body.email]));
 
 	if (databaseResult.rowCount === 0) {
 		response.sendStatus(404);
 	}
 
-	const loginResult = databaseResult.rows[0] === request.body.password;
+	const loginResult = databaseResult.rows[0].senha === request.body.password;
 
 	if (loginResult) {
-		response.json(true);
+		response.json(databaseResult.rows[0].nome);
 	}
 	else {
 		response.sendStatus(401);
