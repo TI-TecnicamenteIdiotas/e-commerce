@@ -8,10 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   flagLoginModal: boolean = false;
+  sessionStorageUserLoginPrompt = sessionStorage.getItem('userLoginPrompt') || 'false';
 
   constructor(private router: Router) {
     if (!sessionStorage.getItem('userLoginPrompt')) {
       sessionStorage.setItem('userLoginPrompt', this.flagLoginModal.toString());
+    }
+    else {
+      this.flagLoginModal = Boolean(sessionStorage.getItem('sessionStorageUserLoginPrompt'));
     }
   }
 

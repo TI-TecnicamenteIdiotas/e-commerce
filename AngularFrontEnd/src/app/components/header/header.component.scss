@@ -34,8 +34,14 @@ header {
         margin: 0.25rem;
 
         div {
-          outline: 1px solid black;
+          border: solid black;
+          border-width: 0 0 0 0;
+          box-shadow: 0.2rem 0.2rem 0.1rem;
           border-radius: 0.25rem;
+
+          &:hover {
+            box-shadow: 0 0 0.25rem inset;
+          }
 
           display: flex;
           justify-content: center;

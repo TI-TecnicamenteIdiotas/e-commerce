@@ -15,9 +15,11 @@ export class ApiUserService {
   }
 
   async doUserLogin(email: string, password: string) {
-    if (((await axios.post(`${environment.apiUrl}/user/login/`, {email, password})).status) === 200) {
-      return true;
+    const serverResponse = (await axios.post(`${environment.apiUrl}/user/login/`, {email, password}));
+
+    if ((serverResponse.status) === 200) {
+      return serverResponse.data;
     }
-    return false;
+    return null;
   }
 }

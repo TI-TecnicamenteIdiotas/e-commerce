@@ -54,18 +54,14 @@
       </div>
 
       <div class="container-button">
-        <a routerLink="/home">
-          <button class="cancelButton">
-            <mat-icon>close</mat-icon>
-            Cancelar
-          </button>
-        </a>
+        <button (click)="navigateToHomeModal()" class="cancelButton">
+          <mat-icon>close</mat-icon>
+          Cancelar
+        </button>
 
         <button class="submitButton"
         [disabled]="!(registerUserForm.controls.userName.valid && registerUserForm.controls.userEmail.valid && registerUserForm.controls.userPassword.valid)"
-        (click)="registerUser()"
-        [swal]="['Pronto!', 'Novo usuário criado com sucesso', 'success']"
-        (confirm)="navigateToHome()">
+        (click)="registerUser()">
           Registrar
           <mat-icon>check</mat-icon>
         </button>

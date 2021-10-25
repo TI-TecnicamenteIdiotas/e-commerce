@@ -8,7 +8,13 @@ icon="warning"
 (dismiss)="userDeniedLoginModal()">
 </swal>
 
-<div class="container" [swal]="loginNotification">
+<div *ngIf="sessionStorageUserLoginPrompt === 'false'" class="container" [swal]="loginNotification">
+  <app-header></app-header>
+  <app-main></app-main>
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="sessionStorageUserLoginPrompt === 'true'" class="container">
   <app-header></app-header>
   <app-main></app-main>
   <app-footer></app-footer>
