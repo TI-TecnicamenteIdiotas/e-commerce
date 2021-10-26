@@ -1,10 +1,16 @@
 import Router from 'express';
 import { client } from '../services/DatabaseService.js';
 
+/** Variable that stores a Express router */
 const router = Router();
 
+//	Returns the total amount of registered logins and passwords
+router.get('/totalUsers', async (request, response) => {
+	response.json((await client.query('SELECT COUNT(*) FROM usuarios')).rowCount);
+});
+
 //	Returns all logins and passwords
-router.get('/allUsers', async (request, response) => {
+router.get('/allUsersInfos', async (request, response) => {
 	response.json((await client.query('SELECT nome, email, senha FROM usuarios')).rows);
 });
 
