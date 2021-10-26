@@ -63,17 +63,7 @@ Nenhum campo preenchido;
 <code>8)</code> Crie testes automatizados para validar o sistema*;<br>
 </p>
 
-<ul>
-<h2>Datas de entrega:</h2>
-<ul>
-<li>
-<code>22/10:</code> 1, 2 e 3;
-</li>
-<li>
-<code>29/10:</code> 4, 5 e 6;
-</li>
-<li>
-<code>05/10:</code> 7 e 8;
-</li>
-</ul>
-</ul>
+## Datas de entrega:
+- [x] 22/10: 1, 2 e 3;
+- [ ] 29/10: 4, 5 e 6;
+- [ ] 05/10: 7 e 8;
