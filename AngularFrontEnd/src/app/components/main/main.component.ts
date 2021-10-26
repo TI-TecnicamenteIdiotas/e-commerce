@@ -9,7 +9,7 @@ export class MainComponent {
   sessionStorageUserSuccessLoginData = JSON.parse(sessionStorage.getItem('userSuccessLoginData') || '{}');
 
   constructor() {
-    console.log(this.sessionStorageUserSuccessLoginData);
+    // console.log(this.sessionStorageUserSuccessLoginData);
   }
 
 }
