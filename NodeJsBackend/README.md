@@ -1,5 +1,5 @@
 # **! IMPORTANT !**
-Its needed to have a postgresql database opened with the in code credentials to everything work as intended, you can see the credentials at:
+Its needed to have a postgresql database open with the in code credentials to everything work as intended, you can see the credentials at:
 ```
 cd src/services
 ```
