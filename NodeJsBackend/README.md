@@ -1,8 +1,8 @@
 # **! IMPORTANT !**
-Its needed to have a postgresql database open
-#
-```
-cd src/services
+It needs to have a PostgreSQL database open with the credentials in the code to everything work as intended, you can see the credentials at:
+
+```bash
+src\services\DatabaseServise.ts
 ```
 Feel free to modify it as you need it.
 #
