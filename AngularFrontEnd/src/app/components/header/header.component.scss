@@ -16,7 +16,7 @@ header {
     justify-self: center;
     align-self: center;
 
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 600;
   }
 
@@ -36,8 +36,30 @@ header {
         div {
           border: solid black;
           border-width: 0 0 0 0;
-          box-shadow: 0.2rem 0.2rem 0.1rem;
+          box-shadow: 0.2rem 0.2rem 0.5rem;
           border-radius: 0.25rem;
+
+          @media only screen and (min-width: 768px) {
+            #consoles::before {
+              content: "Consoles";
+            }
+            #games::before {
+              content: "Games";
+            }
+            #accessories::before {
+              content: "Accessories";
+            }
+            #login::before {
+              content: "Login";
+            }
+            #register::before {
+              content: "Register";
+            }
+
+            b {
+              padding: 0 0.5rem 0 0.5rem;
+            }
+          }
 
           &:hover {
             box-shadow: 0 0 0.25rem inset;
@@ -51,6 +73,35 @@ header {
             padding: 0;
             margin: 0;
           }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      #consoles::before {
+        content: "";
+      }
+      #games::before {
+        content: "";
+      }
+      #accessories::before {
+        content: "";
+      }
+      #login::before {
+        content: "";
+      }
+      #register::before {
+        content: "";
+      }
+
+      b {
+        padding: 0 0.25rem 0 0.25rem;
+      }
+
+      @media only screen and (max-width: 317px) {
+
+        b {
+          padding: 0 0.05rem 0 0.05rem;
         }
       }
     }
