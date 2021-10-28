@@ -4,6 +4,9 @@ import { connectToDatabase } from './services/DatabaseService.js';
 import AdminController from './controllers/AdminController.js';
 import UserController from './controllers/UserController.js';
 
+import PhysicalProductController from './controllers/PhysicalProductController.js';
+import DigitalProductController from './controllers/DigitalProductController.js';
+
 /** Instance of a Express server */
 const app = Express();
 
@@ -15,11 +18,13 @@ app.use(Express.json());
 await connectToDatabase();
 
 //Inject controllers with route
-app.use('/admin', AdminController);
-app.use('/user', UserController);
+app.use('/api/v1/admin', AdminController);
+app.use('/api/v1/user', UserController);
+app.use('/api/v1/physicalProduct', PhysicalProductController);
+app.use('/api/v1/digitalProduct', DigitalProductController);
 
 //Default route api response
-app.get('/', async (request, response) => {
+app.get('/api/v1/', async (request, response) => {
 	response.send('<h1>E-commerce Api</h1>');
 });
 
