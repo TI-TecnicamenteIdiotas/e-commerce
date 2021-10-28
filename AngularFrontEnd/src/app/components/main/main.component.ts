@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiDigitalProductService } from '../../services/api-digital-product.service';
+import { ApiPhysicalProductService } from '../../services/api-physical-product.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  providers: [ApiDigitalProductService, ApiPhysicalProductService]
 })
 export class MainComponent {
-  sessionStorageUserSuccessLoginData = JSON.parse(sessionStorage.getItem('userSuccessLoginData') || '{}');
+  apiDigitalProduct: ApiDigitalProductService;
+  apiPhysicalProduct: ApiPhysicalProductService;
 
-  constructor() {
-    // console.log(this.sessionStorageUserSuccessLoginData);
+  digitalProducts: any[] = [];
+  physicalProducts: any[] = [];
+
+  page: number = 24;
+  itemsPerPage: number = 36;
+
+  constructor(apiDigitalProductService: ApiDigitalProductService, apiPhysicalProductService: ApiPhysicalProductService) {
+    this.apiDigitalProduct = apiDigitalProductService;
+    this.apiPhysicalProduct = apiPhysicalProductService;
   }
 
+  async ngOnInit () {
+    this.digitalProducts = await this.apiDigitalProduct.getAllProducts(this.page, this.itemsPerPage);
+    this.physicalProducts = await this.apiPhysicalProduct.getAllProducts(this.page, this.itemsPerPage);
+  }
 }
