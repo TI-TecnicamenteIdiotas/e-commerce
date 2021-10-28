@@ -1,0 +1,25 @@
+<div class="container" ngbTooltip="{{physicalProduct.nome}} {{physicalProduct.descricao}}" placement="right">
+  <img
+  width="100%"
+  style="aspect-ratio: 12/16;"
+  src="{{physicalProduct.imagem}}"
+  alt="">
+
+  <div class="description">
+
+    <span class="descriptionShortner" style="font-weight: 600; font-size: 0.75em;">
+      {{physicalProduct.nome}}<br>
+      <span class="descriptionShortner">
+        {{physicalProduct.descricao}}
+      </span>
+    </span>
+
+    <span style="font-weight: 600; font-size: 1.25em;">
+      <span style="color: rgb(84, 180, 84);">R$ </span>{{physicalProduct.preco}}
+    </span>
+
+    <span style="font-weight: 800; font-size: 0.75em;">
+      Unidades: {{physicalProduct.quantidade}}
+    </span>
+  </div>
+</div>
