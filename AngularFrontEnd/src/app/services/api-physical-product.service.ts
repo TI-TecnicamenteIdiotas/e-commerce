@@ -11,10 +11,10 @@ export class ApiPhysicalProductService {
   constructor() { }
 
   async getAllProducts () {
-    return (await axios.get(`${environment.apiUrl}/byName/allProducts`)).data;
+    return (await axios.get(`${environment.apiUrl}/physicalProduct/byName/allProducts`)).data;
   }
 
   async getProductByName (physicalProductName: string) {
-    return (await axios.get(`${environment.apiUrl}/byName/${physicalProductName}`)).data;
+    return (await axios.get(`${environment.apiUrl}/physicalProduct/byName/${physicalProductName}`)).data;
   }
 }

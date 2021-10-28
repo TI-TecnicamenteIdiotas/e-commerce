@@ -11,10 +11,10 @@ export class ApiDigitalProductService {
   constructor() { }
 
   async getAllProducts () {
-    return (await axios.get(`${environment.apiUrl}/byName/allProducts`)).data;
+    return (await axios.get(`${environment.apiUrl}/digitalProduct/byName/allProducts`)).data;
   }
 
   async getProductByName (digitalProductName: string) {
-    return (await axios.get(`${environment.apiUrl}/byName/${digitalProductName}`)).data;
+    return (await axios.get(`${environment.apiUrl}/digitalProduct/byName/${digitalProductName}`)).data;
   }
 }
