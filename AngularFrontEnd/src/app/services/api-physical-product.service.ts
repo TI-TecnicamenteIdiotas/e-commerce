@@ -10,8 +10,8 @@ export class ApiPhysicalProductService {
 
   constructor() { }
 
-  async getAllProducts () {
-    return (await axios.get(`${environment.apiUrl}/physicalProduct/byName/allProducts`)).data;
+  async getAllProducts (page: number = 1, itemsPerPage: number = 5) {
+    return (await axios.get<any[]>(`${environment.apiUrl}/physicalProduct/allProducts?page=${page}&itemsPerPage=${itemsPerPage}`)).data;
   }
 
   async getProductByName (physicalProductName: string) {

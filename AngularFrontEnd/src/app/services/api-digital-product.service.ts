@@ -10,8 +10,8 @@ export class ApiDigitalProductService {
 
   constructor() { }
 
-  async getAllProducts () {
-    return (await axios.get(`${environment.apiUrl}/digitalProduct/byName/allProducts`)).data;
+  async getAllProducts (page: number = 1, itemsPerPage: number = 5) {
+    return (await axios.get<any[]>(`${environment.apiUrl}/digitalProduct/allProducts?page=${page}&itemsPerPage=${itemsPerPage}`)).data;
   }
 
   async getProductByName (digitalProductName: string) {
