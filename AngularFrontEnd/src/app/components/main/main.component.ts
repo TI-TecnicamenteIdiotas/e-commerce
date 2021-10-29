@@ -25,6 +25,6 @@ export class MainComponent {
 
   async ngOnInit () {
     this.digitalProducts = await this.apiDigitalProduct.getAllProducts(this.page, this.itemsPerPage);
-    this.physicalProducts = await this.apiPhysicalProduct.getAllProducts(this.page, this.itemsPerPage);
+    this.physicalProducts = await this.apiPhysicalProduct.getAllProducts(1, 2);
   }
 }
