@@ -1,20 +1,4 @@
-<swal #loginNotification
-title="Atenção"
-text="Você precisa estar logado para acessar os produtos do site"
-icon="warning"
-[showCancelButton]="true"
-[focusCancel]="true"
-(confirm)="userAcceptedLoginModal()"
-(dismiss)="userDeniedLoginModal()">
-</swal>
-
-<div *ngIf="sessionStorageUserLoginPrompt === 'false'" class="container" [swal]="loginNotification">
-  <app-header></app-header>
-  <app-main></app-main>
-  <app-footer></app-footer>
-</div>
-
-<div *ngIf="sessionStorageUserLoginPrompt === 'true'" class="container">
+<div class="container">
   <app-header></app-header>
   <app-main></app-main>
   <app-footer></app-footer>
