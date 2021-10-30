@@ -65,22 +65,22 @@ Nenhum campo preenchido;
 
 ## Datas de entrega:
 - [x] 22/10: 1, 2 e 3;
-- [ ] 29/10: 4, 5 e 6;
+- [x] 29/10: 4, 5 e 6;
 - [ ] 05/10: 7 e 8;
 
 ## Responsáveis por cada parte:
 - **NodeJS BackEnd**: 
-  - Almir Júnior
+  - [x] Almir Júnior
 #
 - **Java BackEnd**:
   - Gabriel Rabelo
 #
 - **Angular FrontEnd**:
-  - Almir Júnior
+  - [x] Almir Júnior
 #
 - **Vue FrontEnd**:
   - Almir Júnior
 #
 - **Postgresql Dump**:
-  - Almir Júnior
+  - [x] Almir Júnior
 #
