@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -7,29 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  flagLoginModal: boolean = false;
-  sessionStorageUserLoginPrompt = sessionStorage.getItem('userLoginPrompt') || 'false';
-
   constructor(private router: Router) {
-    if (!sessionStorage.getItem('userLoginPrompt')) {
-      sessionStorage.setItem('userLoginPrompt', this.flagLoginModal.toString());
+    this.userHasToBeLoggedModal();
+  }
+
+  userHasToBeLoggedModal() {
+    if (!sessionStorage.getItem('userSuccessLoginData')) {
+      Swal.fire({
+        title: 'Atenção',
+        text: 'Você precisa estar logado para acessar os produtos do site',
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Fechar',
+        cancelButtonColor: '#80000080',
+        focusCancel: true,
+        confirmButtonText: 'Logar',
+        confirmButtonColor: '#00800080',
+      }).then((value) => {
+        if (value.isConfirmed) {
+          location.href='/login';
+        }
+        else {
+          this.userHasToBeLoggedModal();
+        }
+      });
     }
-    else {
-      this.flagLoginModal = Boolean(sessionStorage.getItem('sessionStorageUserLoginPrompt'));
-    }
   }
-
-  userAcceptedLoginModal() {
-    this.flagLoginModal = true;
-
-    sessionStorage.setItem('userLoginPrompt', this.flagLoginModal.toString());
-    this.router.navigateByUrl('/login');
-  }
-
-  userDeniedLoginModal() {
-    this.flagLoginModal = false;
-
-    sessionStorage.setItem('userLoginPrompt', this.flagLoginModal.toString());
-  }
-
 }
