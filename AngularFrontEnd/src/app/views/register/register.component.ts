@@ -49,7 +49,10 @@ export class RegisterComponent {
           title: `Olá ${this.registerUserForm.value.userName}`,
           text: 'Você foi cadastrado com sucesso!',
           icon: 'success',
-          confirmButtonText: 'Continuar'
+          confirmButtonText: 'Continuar',
+          confirmButtonColor: '#00800080',
+          allowOutsideClick: false,
+          allowEscapeKey: false,
         }).then((result) => {
           if (result.value) {
             location.href = "/login";
@@ -64,7 +67,12 @@ export class RegisterComponent {
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Sair',
-        confirmButtonText: 'Tentar novamente'
+        cancelButtonColor: '#80000080',
+        confirmButtonText: 'Tentar novamente',
+        confirmButtonColor: '#00800080',
+        focusCancel: true,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
       }).then((result) => {
         if (result.dismiss) {
           location.href = '/home';
@@ -80,8 +88,12 @@ export class RegisterComponent {
       icon: 'warning',
       showCancelButton: true,
       cancelButtonText: 'Não',
+      cancelButtonColor: '#80000080',
       confirmButtonText: 'Sim',
-      focusCancel: true
+      confirmButtonColor: '#00800080',
+      focusCancel: true,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
     }).then((result) => {
       if (result.value) {
         // sessionStorage.setItem('userSuccessLoginData', '');
