@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  userIsLogged: boolean;
+  constructor() {
+    if (sessionStorage.getItem('userSuccessLoginData')) {
+      this.userIsLogged = true;
+    }
+    else {
+      this.userIsLogged = false;
+    }
+  }
 
   ngOnInit(): void {
   }

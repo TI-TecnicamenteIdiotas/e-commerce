@@ -5,7 +5,7 @@
 
   <div class="headerbuttons">
     <a routerLink="/consoles">
-      <button ngbTooltip="Consoles" placement="bottom-right">
+      <button matTooltip="Consoles" matTooltipPosition="below" matTooltipClass="tooltip">
         <div>
           <b id="consoles"></b>
           <mat-icon>videogame_asset</mat-icon>
@@ -14,7 +14,7 @@
       </button>
     </a>
     <a routerLink="/games">
-      <button ngbTooltip="Jogos" placement="bottom-right">
+      <button matTooltip="Jogos" matTooltipPosition="below" matTooltipClass="tooltip">
         <div>
           <b id="games"></b>
           <mat-icon>games</mat-icon>
@@ -23,7 +23,7 @@
       </button>
     </a>
     <a routerLink="/accessories">
-      <button ngbTooltip="Acessórios" placement="bottom-right">
+      <button matTooltip="Acessórios" matTooltipPosition="below" matTooltipClass="tooltip">
         <div>
           <b id="accessories"></b>
           <mat-icon>devices_other</mat-icon>
@@ -31,8 +31,8 @@
         </div>
       </button>
     </a>
-    <a routerLink="/login">
-      <button ngbTooltip="Logar" placement="bottom-right">
+    <a *ngIf="!userIsLogged" routerLink="/login">
+      <button matTooltip="Logar" matTooltipPosition="below" matTooltipClass="tooltip">
         <div>
           <b id="login"></b>
           <mat-icon>forward</mat-icon>
@@ -40,11 +40,20 @@
         </div>
       </button>
     </a>
-    <a routerLink="/register">
-      <button ngbTooltip="Registrar" placement="bottom-right">
+    <a *ngIf="!userIsLogged" routerLink="/register">
+      <button matTooltip="Registrar" matTooltipPosition="below" matTooltipClass="tooltip">
         <div>
           <b id="register"></b>
           <mat-icon>how_to_reg</mat-icon>
+          <mat-icon inline="true">keyboard_arrow_down</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a *ngIf="userIsLogged" routerLink="/userInfo">
+      <button matTooltip="Minha Conta" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="userInfo"></b>
+          <mat-icon>account_circle</mat-icon>
           <mat-icon inline="true">keyboard_arrow_down</mat-icon>
         </div>
       </button>
