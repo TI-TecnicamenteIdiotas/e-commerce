@@ -25,6 +25,10 @@ export class MainComponent {
 
   async ngOnInit () {
     this.digitalProducts = await this.apiDigitalProduct.getAllProducts(this.page, this.itemsPerPage);
-    this.physicalProducts = await this.apiPhysicalProduct.getAllProducts(1, 2);
+    this.physicalProducts = await this.apiPhysicalProduct.getAllProducts(1, 4);
+
+    let el: any = document.getElementById("myel");
+
+    el.scrollLeft = 1330;
   }
 }
