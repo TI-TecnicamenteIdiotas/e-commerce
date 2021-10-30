@@ -12,22 +12,22 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   userService: ApiUserService;
   registerUserForm: FormGroup;
-  isUserLogged: boolean = false;
 
   constructor(apiUserService: ApiUserService, private formBuilder: FormBuilder) {
     if (sessionStorage.getItem('userSuccessLoginData')) {
       Swal.fire({
         title: `Olá, ${JSON.parse(sessionStorage.getItem('userSuccessLoginData') || 'error!usuario!').userName}`,
-        text: 'Você já está logado, deseja alterar para outra conta?',
+        html: 'Você já está logado<br>Deseja alterar para outra conta?',
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Não',
-        confirmButtonText: 'Sim'
+        cancelButtonColor: '#80000080',
+        confirmButtonText: 'Sim',
+        confirmButtonColor: '#00800080',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
       }).then((result) => {
-        if (result.value) {
-
-        }
-        else {
+        if (result.isDismissed) {
           this.navigateToHome();
         }
       });
@@ -63,31 +63,34 @@ export class LoginComponent {
               userEmail: this.registerUserForm.value.userEmail
             }));
 
-        this.isUserLogged = true;
-
         Swal.fire({
           title: `Olá, ${JSON.parse(sessionStorage.getItem('userSuccessLoginData') || 'error!usuario!').userName}`,
           text: 'Seja bem-vindo',
           icon: 'success',
-          confirmButtonText: 'Continuar'
+          confirmButtonText: 'Continuar',
+          confirmButtonColor: '#00800080',
+          allowOutsideClick: false,
+          allowEscapeKey: false,
         }).then((result) => {
-          if (result.value) {
+          if (result.isConfirmed) {
             this.navigateToHome();
           }
         });
       }
     } catch (error) {
-      this.isUserLogged = false;
-
       Swal.fire({
         title: 'Falha',
         text: 'Alguma informação que você digitou está errada, tente novamente',
         icon: 'error',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
+        cancelButtonColor: '#80000080',
         confirmButtonText: 'Tentar novamente',
+        confirmButtonColor: '#00800080',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
       }).then((result) => {
-        if (result.dismiss) {
+        if (result.isDismissed) {
           this.navigateToHome();
         }
       });
@@ -101,10 +104,14 @@ export class LoginComponent {
       icon: 'warning',
       showCancelButton: true,
       cancelButtonText: 'Não',
+      cancelButtonColor: '#80000080',
       confirmButtonText: 'Sim',
-      focusCancel: true
+      confirmButtonColor: '#00800080',
+      focusCancel: true,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
     }).then((result) => {
-      if (result.value) {
+      if (result.isConfirmed) {
         // sessionStorage.setItem('userSuccessLoginData', '');
         this.navigateToHome();
       }
