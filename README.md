@@ -69,18 +69,18 @@ Nenhum campo preenchido;
 - [ ] 05/10: 7 e 8;
 
 ## Responsáveis por cada parte:
-- **NodeJS BackEnd**: 
-  - [x] Almir Júnior
+- [x] **NodeJS BackEnd**: 
+  - Almir Júnior
 #
 - **Java BackEnd**:
   - Gabriel Rabelo
 #
-- **Angular FrontEnd**:
-  - [x] Almir Júnior
+- [x] **Angular FrontEnd**:
+  - Almir Júnior
 #
 - **Vue FrontEnd**:
   - Almir Júnior
 #
-- **Postgresql Dump**:
-  - [x] Almir Júnior
+- [x] **Postgresql Dump**:
+  - Almir Júnior
 #
