@@ -12,9 +12,40 @@ footer {
   justify-content: center;
   align-items: center;
 
+  background: black;
+  color: white;
+
+  border-radius: 20% 20% 0 0;
+
   div {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    small {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+      #footerContent {
+        &::before {
+          content: 'E-Commerce® Todos os Direitos Reservados';
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      #footerContent {
+        &::before {
+          content: 'E-Commerce®';
+        }
+        &::after {
+          content: 'Todos os Direitos Reservados';
+        }
+      }
+    }
   }
 }
