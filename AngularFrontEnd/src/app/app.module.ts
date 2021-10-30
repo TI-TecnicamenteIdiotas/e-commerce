@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,11 +37,11 @@ import { PhysicalProductComponent } from './components/main/physical-product/phy
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbModule,
     RouterModule,
     BrowserAnimationsModule,
     MatIconModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
