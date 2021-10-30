@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
 @import 'material-icons/iconfont/material-icons.scss';
 
 html, body {
@@ -14,7 +13,14 @@ html, body {
 
   font-family: 'Montserrat', sans-serif;
 
-  background-image: linear-gradient(to bottom right, rgb(200, 200, 200), rgb(0, 0, 0, 0.5));
+  // background-image: linear-gradient(to bottom right, rgb(200, 200, 200), rgb(0, 0, 0, 0.5));
+  background-color: rgba(0, 0, 0, 0.05);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.mat-tooltip.tooltip {
+  font-size: 1em !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  border-radius: 0.5rem !important;
 }
