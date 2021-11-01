@@ -28,9 +28,6 @@ export class HomeComponent {
         if (value.isConfirmed) {
           location.href='/login';
         }
-        else {
-          this.userHasToBeLoggedModal();
-        }
       });
     }
   }
