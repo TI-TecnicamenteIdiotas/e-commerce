@@ -52,6 +52,12 @@ header {
 
         height: 5vh;
 
+        background-image: url('../../../assets/whiteCircle.svg');
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: center 30%;
+        transition: background-position 250ms;
+
         div {
           border: solid white;
           border-width: 0 0 0 0;
@@ -83,10 +89,6 @@ header {
             }
           }
 
-          &:hover {
-            box-shadow: 0 0 0.25rem inset;
-          }
-
           display: flex;
           justify-content: center;
           align-items: center;
@@ -95,6 +97,14 @@ header {
             padding: 0;
             margin: 0;
           }
+        }
+
+        &:hover {
+          // box-shadow: 0 0 0.25rem inset;
+
+          background-size: 0.5rem 10px;
+          background-position: top;
+          transition: background-position 250ms;
         }
       }
     }
