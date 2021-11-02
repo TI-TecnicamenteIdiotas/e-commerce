@@ -64,6 +64,8 @@
     }
 
     .cancelButton {
+      cursor: pointer;
+
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -122,10 +124,12 @@
       background-color: rgba(0, 128, 0, 0.5);
 
       &:hover:enabled {
+        cursor: pointer;
         box-shadow: 0.25rem 0.25rem 0.5rem inset;
       }
 
       &[disabled] {
+        cursor: not-allowed;
         background-color: rgba(210, 210, 210, 0.5);
         box-shadow: 0.25rem 0.25rem 0.5rem inset;
       }
