@@ -17,7 +17,7 @@ div {
     transition: 250ms;
 
     &:hover {
-      box-shadow: 0.5rem 0.5rem 4rem;
+      box-shadow: 0 0 0;
       // box-shadow: 0 0 0;
       transition: 250ms;
     }
@@ -27,5 +27,17 @@ div {
         box-shadow: 0 0 0;
       }
     }
+  }
+
+  background-image: linear-gradient(90deg, black, black);
+  background-size: 0% 5px;
+  background-repeat: no-repeat;
+  background-position: top;
+  transition: background-size 250ms;
+
+  &:hover {
+    background-size: 50% 5px;
+    background-position: top;
+    transition: background-size 250ms;
   }
 }
