@@ -59,12 +59,30 @@ export class RegisterComponent {
           }
         });
       }
+      else {
+        Swal.fire({
+          title: `${this.registerUserForm.value.userEmail}`,
+          text: 'Este email já consta em nosso banco de dados',
+          icon: 'error',
+          showCancelButton: true,
+          cancelButtonText: 'Sair',
+          cancelButtonColor: '#80000080',
+          confirmButtonText: 'Tentar novamente',
+          confirmButtonColor: '#00800080',
+          focusCancel: true,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+        }).then((result) => {
+          if (result.dismiss) {
+            location.href = '/home';
+          }
+        });
+      }
 
     } catch (error) {
       Swal.fire({
-        title: `${this.registerUserForm.value.userEmail}`,
-        text: 'Este email já consta em nosso banco de dados',
-        icon: 'warning',
+        title: `Erro ao se conectar ao servidor`,
+        icon: 'error',
         showCancelButton: true,
         cancelButtonText: 'Sair',
         cancelButtonColor: '#80000080',
