@@ -11,12 +11,12 @@ export class ApiUserService {
   constructor() { }
 
   async setNewUser(name: string, email: string, password: string) {
-    const serverResponse = (await axios.post(`${environment.apiUrl}/user/register/`, {name, email, password})).status;
+    try {
+      const serverResponse = (await axios.post(`${environment.apiUrl}/user/register/`, {name, email, password})).status;
 
-    if (serverResponse === 201) {
-      return true;
+      return serverResponse === 201;
     }
-    else {
+    catch {
       return false;
     }
   }
