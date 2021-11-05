@@ -66,7 +66,7 @@ Nenhum campo preenchido;
 ## Datas de entrega:
 - [x] 22/10: 1, 2 e 3;
 - [x] 29/10: 4, 5 e 6;
-- [ ] 05/10: 7 e 8;
+- [x] 05/10: 7 e 8;
 
 ## Responsáveis por cada parte:
 - [x] **NodeJS BackEnd**: 
@@ -84,3 +84,7 @@ Nenhum campo preenchido;
 - [x] **Postgresql Dump**:
   - Almir Júnior
 #
+
+<h2>Link do site:</h2>
+<a href="https://almirjnr-e-commerce-frontend.herokuapp.com/home">https://almirjnr-e-commerce-frontend.herokuapp.com/home</a>
+<p>Obs:<br>Talvez seja necessário reiniciar a página e/ou aguardar sua resposta devido ao sistema de standby da plataforma Heroku</p>
